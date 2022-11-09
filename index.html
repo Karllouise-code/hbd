@@ -6,12 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Birthday Karl! &#128513;</title>
 </head>
-<body>
-    <button id="btn">Click me</button>
+<body style="background-color: black;">
+    <div class="center">
+        <button id="btn">Click me</button>
+    </div>
 </body>
+<style>
+    button {
+        padding: 1rem 2rem;
+        font-size: 3rem;
+    }
+    .center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+</style>
 <script>
     function onClickButtonAlertHBD() {
-        alert("Happy Birthday Karl! :)");
+        for (let i = 10; i > 0; i--) {
+            setTimeout(() => {
+                alert(`Happy Birthday Karl! 🎉 ${i}`);
+            }, 200 * (10 - i));
+            if (i === 1) {
+                setTimeout(() => {
+                    alert(`Wish you good health and more birthdays to come! 🎉`);
+                }, 200 * (10 - i));
+            }
+        }
     }
 
     const btn = document.getElementById("btn");
